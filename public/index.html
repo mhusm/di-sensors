@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sensors</title>
+  <script src="libs/vue.js"></script>
+  <script src="libs/shake.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h3>Acceleration</h3>
+    <div>X: {{acceleration.x}}</div>
+    <div>Y: {{acceleration.y}}</div>
+    <div>Z: {{acceleration.z}}</div>
+
+
+      <h3>Orientation</h3>
+      <div>Alpha: {{orientation.alpha}}</div>
+      <div>Beta: {{orientation.beta}}</div>
+      <div>Gamma: {{orientation.gamma}}</div>
+    <div :style="{ 'background-color': `hsl(${orientation.alpha}, 50%, 50%)`, 'height' : '20vh'}">
+    </div>
+
+
+    <div v-for="n in shakeCounter">Shake it, baby!</div>
+
+    <button @click="handleClick">Vibrate</button>
+
+
+  </div>
+  <script src="client.js"></script>
+</body>
+
+</html>
